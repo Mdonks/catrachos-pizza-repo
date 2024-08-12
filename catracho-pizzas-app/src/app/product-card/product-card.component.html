@@ -1,0 +1,31 @@
+<ion-card>
+  <img src="/catracho-pizzas-app//src/assets/pizza.png" alt="Pizza Image"/>
+  <ion-card-header>
+    <ion-card-title>BIG NEW YORKER BACON & BANANA PEPPERS</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Es una pizza de gran tamaño, inspirada al estilo New York con rebanadas grandes, de pepperoni y trocitos de bacon, con abundante rebanadas de chile banana peppers de sabor suave con toque ácido, con una mezcla de orégano y queso parmesano sobre los ingredientes y mantequilla de ajo a la orilla.
+    <ion-item>
+      <ion-label position="stacked">DESDE</ion-label>
+      <ion-text color="danger"><h2>LPS. 329,00</h2></ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">CANTIDAD</ion-label>
+      <ion-button (click)="decreaseQuantity()">-</ion-button>
+      <ion-input [(ngModel)]="quantity" type="number" min="1"></ion-input>
+      <ion-button (click)="increaseQuantity()">+</ion-button>
+    </ion-item>
+    <ion-button expand="block" color="success" (click)="order()">
+      ORDENAR
+    </ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-alert
+  [isOpen]="alertOpen"
+  header="¡Éxito!"
+  message="Ha agregado correctamente el producto a su carrito."
+  buttons="Aceptar"
+  (ionAlertDidDismiss)="alertOpen = false"
+></ion-alert>
+
